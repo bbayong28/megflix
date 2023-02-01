@@ -8,6 +8,9 @@ const All = () => {
   const [page, setPage] = useState(1);
   const [total, setTotal] = useState(0);
   const [snum, setSnum] = useState(1);
+  const handleImgError = (e) => {
+    e.target.src = process.env.PUBLIC_URL + "/cover.png";
+  }
   const allMovie = async () => { 
   const res = await axios.get(`https://yts.mx/api/v2/list_movies.json?page=${page}&limit=16`);
     //console.log(res.data, res.data.data.movie_count);
@@ -34,7 +37,8 @@ const All = () => {
               <li key={it.id} className='itm'>
                 <Link to={`/detail/${it.id}`}>
                   <figure>
-                    <img src={it.medium_cover_image} alt={it.title} />
+                    {/* <img src={it.medium_cover_image} alt={it.title} /> */}
+                    <img src={it.medium_cover_image} alt="" onError={handleImgError}  />
                   </figure>
                   <div className="case">
                     <div className="desc">{ it.title }</div>

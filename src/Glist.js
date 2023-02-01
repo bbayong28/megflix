@@ -12,7 +12,7 @@ const Glist = ({ genre, limit }) => {
     const [load, setLoad] = useState(true);
     const MS = useRef(null);
     const handleImgError = (e) => {
-        e.target.src = process.env.PUBLIC_URL + "/cover.jpg";
+        e.target.src = process.env.PUBLIC_URL + "/cover.png";
     }
     const movieData = async () => {
         setLoad(true)
@@ -28,6 +28,7 @@ const Glist = ({ genre, limit }) => {
         <>
             <section className='Main'>
                 <Outlet />
+                <h2>TOP 20</h2>
                 {
                     load
                         ? <Load />
@@ -50,7 +51,6 @@ const Glist = ({ genre, limit }) => {
                                                 </figure>
                                                 <div className="case">
                                                     <div className='title'>{it.title_long}</div>
-                                                    <div className='desc'>{it.description_full.substr(0, 100)} ... </div>
                                                     <ul className='genre'>
                                                         {
                                                             it.genres.map((g, i) => <li key={i}>{g}</li>)

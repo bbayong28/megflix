@@ -8,7 +8,7 @@ const Gall = ({ genre }) => {
     const [total, setTotal] = useState(0);
     const [snum, setSnum] = useState(1);
     const handleImgError = (e) => {
-        e.target.src = process.env.PUBLIC_URL + "/cover.jpg";
+        e.target.src = process.env.PUBLIC_URL + "/cover.png";
     }
     const allMovie = async () => {
         const res = await axios.get(`https://yts.mx/api/v2/list_movies.json?page=${page}&genre=${genre}&limit=16`);
@@ -26,7 +26,7 @@ const Gall = ({ genre }) => {
     const listNUm = Array.from({ length: total / pnum });
 
     return (
-        <section className='All sec'>
+        <section className='All sec inner'>
             <h3>{total}개의 영화가 있습니다.</h3>
             <ul className='grid'>
                 {

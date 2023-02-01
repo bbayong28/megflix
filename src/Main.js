@@ -33,6 +33,7 @@ const Main = ({ limit }) => {
             <section className='Main'>
                 {/* Nested routes로 만든 <Route>를 어디에 보여줄지 적을 때 */}
                 <Outlet />
+                <h2>TOP 100</h2>
                     {
                         load
                         ? <Load />
@@ -55,7 +56,7 @@ const Main = ({ limit }) => {
                                                 </figure>
                                                 <div className="case">
                                                     <div className='title'>{it.title_long}</div>
-                                                    <div className='desc'>{it.description_full.substr(0, 100)} ... </div>
+                                                    {/* <div className='desc'>{it.description_full.substr(0, 100)} ... </div> */}
                                                     <ul className='genre'>
                                                         {
                                                             it.genres.map((g, i) => <li key={i}>{g}</li>)
@@ -76,7 +77,7 @@ const Main = ({ limit }) => {
                 </div>
             </section>
             <All /> 
-            <List genre='Drama' limit={16} />
+            <List genre='Romance' limit={16} />
             <List genre='Action' limit={16} />
             <List genre='Horror' limit={16} />            
         </>

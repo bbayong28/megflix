@@ -10,7 +10,7 @@ const Detail = () => {
     const [on, setOn] = useState('');
     const cover = useRef(null);
     const handleImgError = (e) => {
-        e.target.src = process.env.PUBLIC_URL + "/cover.jpg";
+        e.target.src = process.env.PUBLIC_URL + "/cover.png";
     }
     const getDetail = async () => {
         setLoad(true);
@@ -45,7 +45,7 @@ const Detail = () => {
                         <div className="desc">
                             <h3>{detailMovie.title}</h3>
                             <p>
-                                {detailMovie.description_full.substr(0, 600)} ...
+                                {detailMovie.description_full.substr(0, 500)} 
                             </p>
                             <ul>
                                 {
