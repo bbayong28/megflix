@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/megflix/static/css/main.3306975f.css",
+    "main.js": "/megflix/static/js/main.ce5c25cc.js",
+    "index.html": "/megflix/index.html",
+    "main.3306975f.css.map": "/megflix/static/css/main.3306975f.css.map",
+    "main.ce5c25cc.js.map": "/megflix/static/js/main.ce5c25cc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3306975f.css",
+    "static/js/main.ce5c25cc.js"
+  ]
+}
