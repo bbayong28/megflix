@@ -8,12 +8,12 @@ const List = ({ genre, limit }) => {
   //useState([])에 처음 설정을 []로 안해주면 map 뿌릴 때 에러남
   const [movie, getMovie] = useState([]);
   const [load, setLoad] = useState(true);
-  console.log(genre, limit);
+  //console.log(genre, limit);
 
   const movieData = async () => { 
     setLoad(true)
     const movieItem = await axios.get(`https://yts.mx/api/v2/list_movies.json?limit=${limit}&genre=${genre}`)
-    console.log(movieItem.data.data.movies);        
+    //console.log(movieItem.data.data.movies);        
     getMovie(movieItem.data.data.movies);
     setLoad(false)
   }

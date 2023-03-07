@@ -15,12 +15,13 @@ const Main = ({ limit }) => {
 
     const handleImgError = (e) => { 
         e.target.src = process.env.PUBLIC_URL + "/cover.png"
+        e.target.src = process.env.PUBLIC_URL + "/assets/img/cover.png";
     }
 
     const movieData = async () => { 
         const movie = await axios.get(`https://yts.mx/api/v2/list_movies.json?limit=${limit}`)
         getMovie(movie.data.data.movies)
-        console.log(movie.data.data.movies)
+        //console.log(movie.data.data.movies)
         setLoad(false)
     }
 
@@ -56,10 +57,9 @@ const Main = ({ limit }) => {
                                                 </figure>
                                                 <div className="case">
                                                     <div className='title'>{it.title_long}</div>
-                                                    {/* <div className='desc'>{it.description_full.substr(0, 100)} ... </div> */}
                                                     <ul className='genre'>
                                                         {
-                                                            it.genres.map((g, i) => <li key={i}>{g}</li>)
+                                                            it.genres?.map((g, i) => <li key={i}>{g}</li>)
                                                         }
                                                     </ul>
                                                 </div>

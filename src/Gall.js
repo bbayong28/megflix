@@ -8,11 +8,11 @@ const Gall = ({ genre }) => {
     const [total, setTotal] = useState(0);
     const [snum, setSnum] = useState(1);
     const handleImgError = (e) => {
-        e.target.src = process.env.PUBLIC_URL + "/cover.png";
+        e.target.src = process.env.PUBLIC_URL + "/assets/img/cover.png";
     }
     const allMovie = async () => {
         const res = await axios.get(`https://yts.mx/api/v2/list_movies.json?page=${page}&genre=${genre}&limit=16`);
-        console.log(res.data, res.data.data.movie_count);
+        //console.log(res.data, res.data.data.movie_count);
         setMovie(res.data.data.movies);
         setTotal(res.data.data.movie_count)
     }
@@ -61,8 +61,8 @@ const Gall = ({ genre }) => {
 
                 <li>
                     {
-                        listNUm.slice(snum, snum + cnum).map((it, idx) => <button onClick={() => setPage(idx + snum)}
-                        >{idx + snum}</button>)
+                        listNUm.slice(snum, snum + cnum).map((it, idx) => 
+                            <button key={idx} onClick={() => setPage(idx + snum)}>{idx + snum}</button>)
                     }
                 </li>
 

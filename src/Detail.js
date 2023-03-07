@@ -10,7 +10,7 @@ const Detail = () => {
     const [on, setOn] = useState('');
     const cover = useRef(null);
     const handleImgError = (e) => {
-        e.target.src = process.env.PUBLIC_URL + "/cover.png";
+        e.target.src = process.env.PUBLIC_URL + "/assets/img/cover.png";
     }
     const getDetail = async () => {
         setLoad(true);
@@ -18,7 +18,7 @@ const Detail = () => {
         const detail = movie.data.data.movie;
         setDetailMovie(detail);
         setLoad(false);
-        console.log(detail);
+        //console.log(detail);
     }
 
     const wheelStop = (e) => {

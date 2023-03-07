@@ -12,13 +12,13 @@ const Glist = ({ genre, limit }) => {
     const [load, setLoad] = useState(true);
     const MS = useRef(null);
     const handleImgError = (e) => {
-        e.target.src = process.env.PUBLIC_URL + "/cover.png";
+        e.target.src = process.env.PUBLIC_URL + "/assets/img/cover.png";
     }
     const movieData = async () => {
         setLoad(true)
         const movie = await axios.get(`https://yts.mx/api/v2/list_movies.json?limit=${limit}&genre=${genre}`);
         getMovie(movie.data.data.movies);
-        console.log(movie.data.data.movies);
+        //console.log(movie.data.data.movies);
         setLoad(false)
     }
     useEffect(() => {

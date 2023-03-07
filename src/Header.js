@@ -8,7 +8,7 @@ const Header = ({ children }) => {
             <div className="inner flex">
                 <h1>
                     <Link to='/'>
-                        <img src={ process.env.PUBLIC_URL + '/logo.png' } alt="" />
+                        <img src={ process.env.PUBLIC_URL + '/assets/img/logo.png' } alt="" />
                     </Link>
                 </h1>
                 <div className='gnb'>

@@ -30,7 +30,8 @@ const SearchResult = () => {
 
 
     const handleImgError = (e) => {
-        e.target.src = process.env.PUBLIC_URL + "/cover.png";
+        //e.target.src = process.env.PUBLIC_URL + "/cover.png";
+        e.target.src = process.env.PUBLIC_URL + "/assets/img/cover.png";
     }
 
     return (

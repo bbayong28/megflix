@@ -9,7 +9,7 @@ const All = () => {
   const [total, setTotal] = useState(0);
   const [snum, setSnum] = useState(1);
   const handleImgError = (e) => {
-    e.target.src = process.env.PUBLIC_URL + "/cover.png";
+    e.target.src = process.env.PUBLIC_URL + "/assets/img/cover.png";
   }
   const allMovie = async () => { 
   const res = await axios.get(`https://yts.mx/api/v2/list_movies.json?page=${page}&limit=16`);
